@@ -13,8 +13,8 @@ exports.get = exports.post = {
 
     if (issues.length) return {success: false, issues}
 
-    const token = generateDashedToken()
-    db.collection('users').findOneAndUpdate({login}, {$set: {token}})
+    const token = generateDashedToken(),  modified = new Date
+    db.collection('users').findOneAndUpdate({login}, {$set: {token, modified}})
     response.setCookie('token', token)
     return {success: true}
   }

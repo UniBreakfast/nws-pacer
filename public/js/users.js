@@ -10,7 +10,12 @@ async function getUsers() {
 }
 
 function buildRow(user) {
-  return `<tr><td>${user.login}</td><td>${user.name}</td></tr>`
+  return `<tr>
+    <td>${user.login}</td>
+    <td>${user.name}</td>
+    <td>${formatDateTime(user.created)}</td>
+    <td>${formatDateTime(user.modified)}</td>
+  </tr>`
 }
 
 async function logOut() {

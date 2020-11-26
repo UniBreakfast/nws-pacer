@@ -7,7 +7,8 @@ exports.get = exports.post = {
     if (issues.length) return {success: false, issues}
 
     delete user.password
-    user.hash = await hash(password)
+    const [created, modified] = [new Date, new Date]
+    Object.assign(user, {hash: await hash(password), created, modified})
     const unique = ! await db.collection('users').findOne({login})
     if (unique) db.collection('users').insertOne(user)
     return {success: unique}

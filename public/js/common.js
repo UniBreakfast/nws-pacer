@@ -10,7 +10,7 @@ sounds.touch.volume = .1
 const sides = {left: 'right', right: 'left', up: 'down', down: 'up'}
 
 
-const fixTitle = () => document.title = 'Naive Users '+document.title
+const fixTitle = () => document.title = 'Pacer '+document.title
 
 EventTarget.prototype.on = addEventListener
 
@@ -74,4 +74,12 @@ function goTo(url, side) {
 async function checkIn() {
   const response = await fetch('/api/checkin')
   if (response.ok && (await response.json()).session) return true
+}
+
+function formatDateTime(jsonDate) {
+  const local = new Date(jsonDate).toLocaleString()
+  const formatParts = local.match(/^(\d\d)\.(\d\d)\.(\d{4}), (\d\d:\d\d):\d\d$/)
+  if (!formatParts) return local
+  const [_, date, month, year, time] = formatParts
+  return `${year}-${month}-${date}, ${time}`
 }
