@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/issues.css">
+
+  <script src="js/common.js"></script>
+  <script src="js/login.js" defer></script>
+
+  <title> - Log In</title>
+  <script>fixTitle()</script>
+
+</head>
+
+<body hidden>
+  <main>
+    <header>
+      <h1>Log in as a user</h1>
+    </header>
+
+    <section>
+      <label>
+        Not registered yet?
+        <button data-url="register" data-side="left">Register</button>
+      </label>
+
+      <form id="loginForm" action="javascript:">
+        <fieldset>
+          <legend>log in form</legend>
+
+          <label>
+            Enter your login:
+            <input name="login" type="text" autofocus>
+          </label>
+          <label>
+            What is your password:
+            <input name="password" type="password">
+          </label>
+        </fieldset>
+        <buttons>
+          <button type="submit">Log In</button>
+          <button type="reset">Clear</button>
+        </buttons>
+      </form>
+    </section>
+  </main>
+
+  <script> checkIn().then(loggedIn => { if (loggedIn) goTo('users') }) </script>
+</body>
+
+</html>

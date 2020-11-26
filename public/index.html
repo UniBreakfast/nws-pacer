@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/common.css">
+
+  <script src="js/common.js"></script>
+
+  <script>fixTitle()</script>
+
+</head>
+
+<!-- <body class="dark-theme" hidden> -->
+<body hidden>
+  <main>
+    <header>
+      <h1>Naive Users</h1>
+    </header>
+
+    <section>
+      <buttons>
+        <button data-url="register" data-side="left">Register</button>
+        <button data-url="login" data-side="right" autofocus>Log In</button>
+      </buttons>
+    </section>
+  </main>
+
+  <script> checkIn().then(loggedIn => { if (loggedIn) goTo('users') }) </script>
+</body>
+
+</html>

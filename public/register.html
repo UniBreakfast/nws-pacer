@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/issues.css">
+
+  <script src="js/common.js"></script>
+  <script src="js/register.js" defer></script>
+
+  <title> - Register</title>
+  <script>fixTitle()</script>
+
+</head>
+
+<body hidden>
+  <main>
+    <header>
+      <h1>Register as a user</h1>
+    </header>
+
+    <section>
+      <label>
+        Already a user?
+        <button data-url="login" data-side="right">Log In</button>
+      </label>
+
+      <form id="regForm" action="javascript:">
+        <fieldset>
+          <legend>registration form</legend>
+
+          <label>
+            Enter your name:
+            <input name="name" type="text" autofocus>
+          </label>
+          <label>
+            What would be your login:
+            <input name="login" type="text">
+          </label>
+          <label>
+            Come up with the password:
+            <input name="password" type="password">
+          </label>
+          <label>
+            Confirm your password:
+            <input name="confirm" type="password">
+          </label>
+        </fieldset>
+        <buttons>
+          <button type="submit">Register</button>
+          <button type="reset">Clear</button>
+        </buttons>
+      </form>
+    </section>
+  </main>
+
+  <script> checkIn().then(loggedIn => { if (loggedIn) goTo('users') }) </script>
+</body>
+
+</html>
