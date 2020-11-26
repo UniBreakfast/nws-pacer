@@ -1,22 +1,22 @@
 {
-  "name": "tors-nwsws",
+  "name": "nws-pacer",
   "version": "1.0.0",
-  "description": "",
+  "description": "YATAP",
   "main": "index.js",
   "scripts": {
     "start": "node index"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/UniBreakfast/tors-nwsws.git"
+    "url": "git+https://github.com/UniBreakfast/nws-pacer.git"
   },
   "keywords": [],
   "author": "Mykhailo \"Ninin\" Velykoselskyi",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/UniBreakfast/tors-nwsws/issues"
+    "url": "https://github.com/UniBreakfast/nws-pacer/issues"
   },
-  "homepage": "https://github.com/UniBreakfast/tors-nwsws#readme",
+  "homepage": "https://github.com/UniBreakfast/nws-pacer#readme",
   "dependencies": {
     "mongodb": "^3.6.3",
     "node-web-server-with-stuff": "^1.4.5"
