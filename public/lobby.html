@@ -9,7 +9,6 @@
 
   <script src="js/common.js"></script>
 
-  <title> - Main Menu</title>
   <script>fixTitle()</script>
 
 </head>
@@ -22,15 +21,14 @@
     </header>
 
     <section>
-      <button data-url="/endeavors" data-side="left">Endeavors</button>
-      <button data-url="/activities" data-side="right">Activities</button>
-      <button data-url="/users" data-side="up">Users</button>
+      <buttons>
+        <button data-url="register" data-side="left">Register</button>
+        <button data-url="login" data-side="right" autofocus>Log In</button>
+      </buttons>
     </section>
   </main>
 
-  <script>
-    checkIn().then(loggedIn => { if (!loggedIn) goTo('lobby') })
-  </script>
+  <script> checkIn().then(loggedIn => { if (loggedIn) goTo('/') }) </script>
 </body>
 
 </html>

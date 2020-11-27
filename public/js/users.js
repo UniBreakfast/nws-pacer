@@ -3,7 +3,7 @@ getUsers()
 
 async function getUsers() {
   const response = await fetch('/api/users')
-  if (!response.ok) return goTo('/')
+  if (!response.ok) return goTo('/lobby')
 
   const users = await response.json()
   userTable.tBodies[0].innerHTML = users.map(buildRow).join('')

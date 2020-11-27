@@ -1,0 +1,50 @@
+buttons {
+  gap: 20px;
+  align-items: flex-end;
+}
+
+buttons>label {
+  display: flex;
+  flex-flow: column;
+  border: 2px solid var(--normal-color);
+  background-color: var(--normal-back-color);
+  width: 12px;
+  padding: 5px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  box-sizing: content-box;
+}
+
+buttons>label.focused {
+  background-color: var(--dim-color);
+}
+
+buttons>label.critical {
+  background-color: var(--error-color);
+}
+
+buttons>label>span {
+  line-height: 0;
+  transform: translateY(-35px);
+}
+
+buttons>label>input {
+  height: 100%;
+  width: 100%;
+}
+
+buttons>label>input:focus {
+  box-shadow: none;
+}
+
+label:nth-child(1) { height: 50px; }
+label:nth-child(2) { height: 65px; }
+label:nth-child(3) { height: 80px; }
+label:nth-child(4) { height: 95px; }
+label:nth-child(5) { height: 110px; }
+label:nth-child(6) { height: 125px; }
+label:nth-child(7) { height: 140px; }
+label:nth-child(8) { height: 155px; }
+label:nth-child(9) { height: 170px; }
+label:nth-child(10) { height: 185px; }

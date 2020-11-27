@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/estimate.css">
+
+  <script src="js/common.js"></script>
+  <script src="js/estimate.js" defer></script>
+
+  <title> - Confidence Estimation</title>
+  <script>fixTitle()</script>
+
+</head>
+
+<body hidden>
+  <main>
+    <header>
+      <h1>Estimate your confidence</h1>
+    </header>
+
+    <section>
+      <form action="javascript:">
+        <buttons>
+          <label>
+            <span>1</span>
+            <input type="radio" name="scale" value="1">
+          </label>
+          <label>
+            <span>2</span>
+            <input type="radio" name="scale" value="2">
+          </label>
+          <label>
+            <span>3</span>
+            <input type="radio" name="scale" value="3">
+          </label>
+          <label>
+            <span>4</span>
+            <input type="radio" name="scale" value="4">
+          </label>
+          <label>
+            <span>5</span>
+            <input type="radio" name="scale" value="5">
+          </label>
+          <label>
+            <span>6</span>
+            <input type="radio" name="scale" value="6">
+          </label>
+          <label>
+            <span>7</span>
+            <input type="radio" name="scale" value="7">
+          </label>
+          <label>
+            <span>8</span>
+            <input type="radio" name="scale" value="8">
+          </label>
+          <label>
+            <span>9</span>
+            <input type="radio" name="scale" value="9">
+          </label>
+          <label>
+            <span>10</span>
+            <input type="radio" name="scale" value="10">
+          </label>
+        </buttons>
+        <button id="nextBtn" type="submit">Next</button>
+      </form>
+    </section>
+  </main>
+
+  <script>
+    checkIn().then(loggedIn => { if (!loggedIn) goTo('lobby') })
+  </script>
+</body>
+
+</html>

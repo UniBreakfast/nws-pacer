@@ -8,7 +8,7 @@ loginForm.onsubmit = async () => {
   const request = {method: 'POST', body: stringify(user)}
   const response = await fetch('/api/login', request)
   const answer = await response.json()
-  if (answer.success) return goTo('users', 'down')
+  if (answer.success) return goTo('/', 'down')
   else new Issues(...answer.issues).show()
 }
 
