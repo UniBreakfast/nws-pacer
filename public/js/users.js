@@ -13,8 +13,9 @@ function buildRow(user) {
   return `<tr>
     <td>${user.login}</td>
     <td>${user.name}</td>
-    <td>${formatDateTime(user.created)}</td>
-    <td>${formatDateTime(user.modified)}</td>
+    <td disabled>${formatDateTime(user.checked)}</td>
+    <td disabled>${formatDateTime(user.modified)}</td>
+    <td disabled>${formatDateTime(user.created)}</td>
   </tr>`
 }
 

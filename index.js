@@ -5,9 +5,9 @@ catch { console.warn("No stuff.cjs found in root. It's ok if you have all approp
 const { server, c } = require('node-web-server-with-stuff')
 const {hash, verify} = require('./hashVerify.cjs')
 const {connect, ObjectId} = require('./useMongo.cjs')
-const db = connect()
+const db = connect(),  users = db.then(db => db.collection('users'))
 
-const given = {hash, verify, db, ObjectId}
+const given = {hash, verify, db, users, ObjectId}
 
 server.run({given})
 

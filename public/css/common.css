@@ -1,5 +1,6 @@
 .dark-theme {
   --normal-color: hsl(0, 0%, 80%);
+  --dim-color: hsl(0, 0%, 55%);
   --normal-back-color: hsl(0, 0%, 0%);
   --low-contrast-back-color: hsl(0, 0%, 13%);
   --avg-contrast-back-color: hsl(0, 0%, 20%);
@@ -7,6 +8,7 @@
 
 :root {
   --normal-color: hsl(0, 0%, 20%);
+  --dim-color: hsl(0, 0%, 45%);
   --normal-back-color: hsl(0, 0%, 99%);
   --low-contrast-back-color: hsl(0, 0%, 96%);
   --avg-contrast-back-color: hsl(0, 0%, 85%);
@@ -179,4 +181,8 @@ tr:nth-child(even) {
   border: 2px solid var(--normal-color);
   background-color: var(--avg-contrast-back-color);
   border-radius: 10px;
+}
+
+[disabled], :disabled {
+  color: var(--dim-color)
 }
