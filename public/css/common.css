@@ -8,7 +8,7 @@
 
 :root {
   --normal-color: hsl(0, 0%, 20%);
-  --dim-color: hsl(0, 0%, 45%);
+  --dim-color: hsl(0, 0%, 55%);
   --normal-back-color: hsl(0, 0%, 99%);
   --low-contrast-back-color: hsl(0, 0%, 96%);
   --avg-contrast-back-color: hsl(0, 0%, 85%);
