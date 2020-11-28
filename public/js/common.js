@@ -1,5 +1,7 @@
-const {assign} = Object
+const {stringify} = JSON,  {assign, values, fromEntries} = Object
 let body, mousedownTime
+
+
 
 const sounds = {
   click: new Audio('mp3/button.mp3'),
@@ -82,4 +84,24 @@ function formatDateTime(jsonDate) {
   if (!formatParts) return local
   const [_, date, month, year, time] = formatParts
   return `${year}-${month}-${date}, ${time}`
+}
+
+
+class Issues extends Array {
+  add(name, issue) { this.push({name, issue}) }
+  require(name) { this.push({name, issue: 'required'}) }
+
+  show() {
+    this.hide()
+    const issues = Issues.last = document.createElement('ul')
+    issues.classList.add('issues')
+    issues.append(...this.map(issue => assign(document.createElement('li'),
+      {innerText: values(issue).join(': ')})))
+    body.append(issues)
+    issues.onanimationend = () => issues.remove()
+  }
+
+  hide() {
+    if (Issues.last) Issues.last.style.animationName = "issues-off"
+  }
 }

@@ -1,5 +1,3 @@
-const {stringify} = JSON,  {values, fromEntries} = Object
-
 loginForm.onsubmit = async () => {
   const user = fromEntries(new FormData(loginForm))
   const issues = await validate(user)
@@ -24,20 +22,4 @@ function validate(user) {
   if (!password) issues.require('password')
 
   return issues
-}
-
-
-class Issues extends Array {
-  add(name, issue) { this.push({name, issue}) }
-  require(name) { this.push({name, issue: 'required'}) }
-
-  show() {
-    if (Issues.last) Issues.last.style.animationName = "issues-off"
-    const issues = Issues.last = document.createElement('ul')
-    issues.classList.add('issues')
-    issues.append(...this.map(issue => assign(document.createElement('li'),
-      {innerText: values(issue).join(': ')})))
-    body.append(issues)
-    issues.onanimationend = () => issues.remove()
-  }
 }

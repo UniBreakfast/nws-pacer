@@ -1,5 +1,3 @@
-const {stringify} = JSON,  {values, fromEntries} = Object
-
 regForm.onsubmit = async () => {
   const user = fromEntries(new FormData(regForm))
   const issues = await validate(user)
@@ -43,20 +41,4 @@ async function isFree(login) {
   const response = await fetch('/api/isfree?login='+login)
   const answer = await response.json()
   return answer.vacant == true
-}
-
-
-class Issues extends Array {
-  add(name, issue) { this.push({name, issue}) }
-  require(name) { this.push({name, issue: 'required'}) }
-
-  show() {
-    if (Issues.last) Issues.last.style.animationName = "issues-off"
-    const issues = Issues.last = document.createElement('ul')
-    issues.classList.add('issues')
-    issues.append(...this.map(issue => assign(document.createElement('li'),
-      {innerText: values(issue).join(': ')})))
-    body.append(issues)
-    issues.onanimationend = () => issues.remove()
-  }
 }
