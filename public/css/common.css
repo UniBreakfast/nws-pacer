@@ -81,6 +81,12 @@ input {
   outline: none;
 }
 
+input:-webkit-autofill {
+  -webkit-text-fill-color: var(--normal-color);
+  box-shadow: 0 0 0 99px var(--normal-back-color) inset;
+  transition: 1s;
+}
+
 input[type="radio"] {
   filter: invert(0) grayscale(1);
 }
@@ -90,7 +96,14 @@ input[type="radio"] {
 }
 
 input:focus, .focused {
-  box-shadow: 0 0 6px 8px var(--normal-back-color),
+  box-shadow: 0 0 0 0 var(--normal-back-color) inset,
+              0 0 6px 8px var(--normal-back-color),
+              0 0 8px 8px var(--normal-color);
+}
+
+input:focus:-webkit-autofill {
+  box-shadow: 0 0 0 99px var(--normal-back-color) inset,
+              0 0 6px 8px var(--normal-back-color),
               0 0 8px 8px var(--normal-color);
 }
 
